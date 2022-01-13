@@ -6,7 +6,7 @@ def load_dataset(num_workers):
                                             transforms.RandomAffine(0, translate=(0.2, 0.2)),
                                            transforms.ToTensor(), ])
     train = datasets.MNIST('./', train=True, download=True, transform = trans)
-    test = datasets.MNIST('./', train=False, download=False, transform =
+    test = datasets.MNIST('./', train=False, download=True, transform =
                                      transforms.Compose([transforms.ToTensor()]))
 
     train_dataloader = DataLoader(train, batch_size=120, shuffle=True, num_workers=num_workers)
