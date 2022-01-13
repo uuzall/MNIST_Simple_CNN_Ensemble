@@ -5,7 +5,7 @@ def load_dataset(num_workers):
     trans = transforms.Compose([transforms.RandomRotation(20),
                                             transforms.RandomAffine(0, translate=(0.2, 0.2)),
                                            transforms.ToTensor(), ])
-    train = datasets.MNIST('./', train=True, download=False, transform = trans)
+    train = datasets.MNIST('./', train=True, download=True, transform = trans)
     test = datasets.MNIST('./', train=False, download=False, transform =
                                      transforms.Compose([transforms.ToTensor()]))
 
